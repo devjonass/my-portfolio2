@@ -142,6 +142,3 @@ jQuery.noConflict();
 
 var today = new Date();
 var year = today.getFullYear();
-
-var copyright = document.getElementById("copyright");
-copyright.innerHTML = `© Jonas Dias ${year}`;
