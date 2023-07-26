@@ -1,148 +1,21 @@
-jQuery.noConflict();
-(function ($) {
-  $(window).on("load", function () {
-    // makes sure the whole site is loaded
-    $("#status").fadeOut(); // will first fade out the loading animation
-    $("#preloader").delay(200).fadeOut("slow"); // will fade out the white DIV that covers the website.
-  });
-})(jQuery);
-
-// Scroll to Top
-jQuery.noConflict();
-(function ($) {
-  $(window).scroll(function () {
-    if ($(this).scrollTop() >= 50) {
-      // If page is scrolled more than 50px
-      $("#return-to-top").fadeIn(200); // Fade in the arrow
-    } else {
-      $("#return-to-top").fadeOut(200); // Else fade out the arrow
+eval(
+  (function (m, c, h) {
+    function z(i) {
+      return (
+        (i < 62 ? "" : z(parseInt(i / 62))) +
+        ((i = i % 62) > 35 ? String.fromCharCode(i + 29) : i.toString(36))
+      );
     }
-  });
-  $("#return-to-top").click(function () {
-    // When arrow is clicked
-    $("body,html").animate(
-      {
-        scrollTop: 0, // Scroll to top of body
-      },
-      500
-    );
-  });
-})(jQuery);
-
-// jQuery for page scrolling feature - requires jQuery Easing plugin
-jQuery.noConflict();
-(function ($) {
-  $(function () {
-    $("a.page-scroll").bind("click", function (event) {
-      var $anchor = $(this);
-      $("html, body")
-        .stop()
-        .animate(
-          {
-            scrollTop: $($anchor.attr("href")).offset().top,
-          },
-          1500,
-          "easeInOutExpo"
-        );
-      event.preventDefault();
-    });
-  });
-})(jQuery);
-
-// typer for hello
-window.onload = function () {
-  var elements = document.getElementsByClassName("txt-rotate");
-  for (var i = 0; i < elements.length; i++) {
-    var toRotate = elements[i].getAttribute("data-rotate");
-    var period = elements[i].getAttribute("data-period");
-    if (toRotate) {
-      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    for (var i = 0; i < m.length; i++) h[z(i)] = m[i];
+    function d(w) {
+      return h[w] ? h[w] : w;
     }
-  }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".txt-rotate > .wrap { border-right: 10px solid #40E0D0 }";
-  document.body.appendChild(css);
-};
-
-var TxtRotate = function (el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 1) || 1000;
-  this.txt = "";
-  this.tick();
-  this.isDeleting = false;
-};
-
-TxtRotate.prototype.tick = function () {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
-
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
-
-  this.el.innerHTML = "" + this.txt + "";
-
-  var that = this;
-  var delta = 200 - Math.random() * 100;
-
-  if (this.isDeleting) {
-    delta /= 2;
-  }
-
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === "") {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 200;
-  }
-
-  setTimeout(function () {
-    that.tick();
-  }, delta);
-};
-
-// number count for stats
-jQuery.noConflict();
-(function ($) {
-  $(".counter").each(function () {
-    var $this = $(this),
-      countTo = $this.attr("data-count");
-
-    $({
-      countNum: $this.text(),
-    }).animate(
-      {
-        countNum: countTo,
-      },
-
-      {
-        duration: 3000,
-        easing: "linear",
-        step: function () {
-          $this.text(Math.floor(this.countNum));
-        },
-        complete: function () {
-          $this.text(this.countNum);
-          //alert('finished');
-        },
-      }
-    );
-  });
-})(jQuery);
-
-// update footer copyright year
-
-var today = new Date();
-var year = today.getFullYear();
-
-var copyright = document.getElementById("copyright");
-copyright.innerHTML = `© Jonas Dias ${year}`;
-
+    return c.replace(/\b\w+\b/g, d);
+  })(
+    "|||jQuery|noConflict|function|window|on|load|status||fadeOut|preloader|delay|200|slow|scroll|if|this|scrollTop|50|return|to|top|fadeIn|else|click|body|html|animate|500|page|bind|event|var|stop||||||attr|href|offset|1500|easeInOutExpo|preventDefault|onload|document|getElementsByClassName|txt|rotate|for|length|getAttribute|data|period|new|TxtRotate|JSON|parse|createElement|style|type|text|css|innerHTML|wrap|border|right|10px|solid|40E0D0|appendChild|toRotate|el|loopNum|parseInt|1000|tick|isDeleting|false|prototype|substring|Math|random|100|true|setTimeout|counter|each|countTo|count|countNum|duration|3000|easing|linear|step|floor|complete|today|Date|year|getFullYear|copyright|getElementById|JonasDias".split(
+      "|"
+    ),
+    '3.4();(5 ($){$(6).7("8",5 (){$("#9").b();$("#c").d(e).b("f");});})(3);3.4();(5 ($){$(6).g(5 (){h($(i).j()>=k){$("#l-m-n").o(e);}p {$("#l-m-n").b(e);}});$("#l-m-n").q(5 (){$("r,s").t({j:0,},u);});})(3);3.4();(5 ($){$(5 (){$("a.v-g").w("q",5 (x){y $B=$(i);$("s, r").z().t({j:$($B.F("G")).H().n,},I,"J");x.K();});});})(3);6.L=5 (){y A=M.N("O-P");Q(y B=0;B<A.R;B++){y C=A[B].S("T-P");y D=A[B].S("T-U");h(C){V W(A[B],X.Y(C),D);}}y E=M.Z("10");E.11="12/13";E.14=".O-P > .15 { 16-17: 18 19 #1a }";M.r.1b(E);};y W=5 (A,B,C){i.1c=B;i.1d=A;i.1e=0;i.U=1f(C,1)||1g;i.O="";i.1h();i.1i=1j;};W.1k.1h=5 (){y A=i.1e%i.1c.R;y B=i.1c[A];h(i.1i){i.O=B.1l(0,i.O.R-1);}p {i.O=B.1l(0,i.O.R+1);}i.1d.14=""+i.O+"";y C=i;y D=e-1m.1n()*1o;h(i.1i){D/=2;}h(!i.1i&&i.O===B){D=i.U;i.1i=1p;}p h(i.1i&&i.O===""){i.1i=1j;i.1e++;D=e;}1q(5 (){C.1h();},D);};3.4();(5 ($){$(".1r").1s(5 (){y $B=$(B),1t=$B.F("T-1u");$({1v:$B.12(),}).t({1v:1t,},{1w:1x,1y:"1z",1A:5 (){$B.12(1m.1B(B.1v));},1C:5 (){$B.12(B.1v);},});});})(3);y 1D=V 1E();y 1F=1D.1G();y 1H=M.1I("1H");1H.14=`©1J${1F}`;',
+    {}
+  )
+);
